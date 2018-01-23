@@ -68,6 +68,33 @@ function fibonacci2(n) {
   return calc(n);
 }
 
+
+
+// for version:
+
+function fbTOArray(n){
+  var a = new Array();
+  a[0]=0;
+  a[1]=1;
+  for(var i=2;i<=n;i++){
+    a[i]=a[i-1]+a[i-2];
+  }
+  return a[ n ];
+}
+
+// while version:
+function getFibonacci(n) {
+  var fibarr = [];
+  var i = 0;
+  if( n <=1 ) return n;
+  if( n == 2) return 2;
+  while(i<n) {
+    fibarr.push(fibarr[i-1] + fibarr[i-2]);
+    i++;
+  }
+
+  return fibarr[n];
+}
 describe('008-fibonacci', function () {
   it(" fibonacci(0) 0", function () {
     assert.deepEqual(fibonacci(0), 0);
@@ -89,3 +116,4 @@ describe('008-fibonacci', function () {
     assert.deepEqual(fibonacci(4), 3);
   });
 });
+
