@@ -17,6 +17,15 @@ function checkPalindrom(inStr){
 }
 
 
+function isPalindrome2(str){
+  for (var i = 0; i < str.length / 2; i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
 describe('001-checkPalindrom', function() {
   it(" checkPalindrom('reer') ", function() {
     assert.equal( checkPalindrom('reer'), true );

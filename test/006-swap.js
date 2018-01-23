@@ -33,6 +33,13 @@ var assert = require('assert');
 
 
 
+ function swap2(a,b) {
+  a = a^b;
+  b = a^b;
+  a = a^b;
+  return [a,b];
+ }
+
 
  describe('006-swap', function() {
   it(" swap(1,2) => [2,1] ", function() {
